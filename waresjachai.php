@@ -66,7 +66,7 @@
         $poriciti = mysqli_query($con, $query);
 
         while ($row = mysqli_fetch_assoc($poriciti)) {
-          $id = $row['sarok'];
+          $id = $row['id'];
         ?>
           <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
 
