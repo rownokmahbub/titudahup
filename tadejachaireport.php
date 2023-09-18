@@ -65,13 +65,13 @@ if (isset($_REQUEST['id'])) {
         </div>
         <div class="flex justify-between items-center">
             <p>ভোটার আইডি : <span><?= $voterid ?></span> </p>
-
+            <p class=''>ওয়ার্ড নম্বর : <span><?= $word ?></span></p>
 
 
         </div>
         <div class="flex justify-between items-start">
             <p>প্রতিষ্ঠানের নাম: <span><?= $tradename ?></span> </p>
-            <p class=''>ওয়ার্ড নম্বর : <span><?= $word ?></span></p>
+            <p>জাতীয়তা : বাংলাদেশী </p>
         </div>
 
 

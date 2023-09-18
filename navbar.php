@@ -97,10 +97,7 @@
                                     <a href="mouja.php" class="block px-4 py-2 hover:bg-primary hover:text-white ">মৌজার
                                         তালিকা</a>
                                 </li>
-                                <li>
-                                    <a href="vwb.php" class="block px-4 py-2 hover:bg-primary hover:text-white ">ভিডব্লিউবি
-                                        তালিকা</a>
-                                </li>
+
 
                                 <li>
                                     <a href="gram.php" class="block px-4 py-2 hover:bg-primary hover:text-white ">গ্রামের
@@ -118,6 +115,10 @@
                         <!-- Dropdown menu -->
                         <div id="dropdownNavbar3" class="z-50 hidden font-normal bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 divide-y divide-gray-100 rounded-lg shadow w-44 ">
                             <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="vwb.php" class="block px-4 py-2 hover:bg-primary hover:text-white ">ভিডব্লিউবি
+                                        তালিকা</a>
+                                </li>
                                 <li>
                                     <a href="boyoskovtable.php" class="block px-4 py-2 hover:bg-primary hover:text-white ">বয়স্ক ভাতা</a>
                                 </li>
