@@ -53,7 +53,7 @@ if (isset($_REQUEST['id'])) {
         <input type="hidden" name="hid" value="<?php echo $kid; ?>">
         <div class="grid grid-cols-1  gap-5 w-full">
             <div>
-                <label for="name">নাম</label>
+                <label for="name">মৌজার নাম</label>
                 <input name='name' type="text"
                     class='px-3 py-2 border-gray-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 w-full rounded-xl text-sky-900'
                     value='<?php echo $name ?>'>
@@ -65,23 +65,13 @@ if (isset($_REQUEST['id'])) {
                     value='<?php echo $word ?>'>
             </div>
             <div>
-                <label for="name">পুরুষের সংখা</label>
+                <label for="name">মৌজা নং</label>
                 <input name='moujano' type="text"
                     class='px-3 py-2 border-gray-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 w-full rounded-xl text-sky-900'
                     value='<?php echo $moujano ?>'>
             </div>
-            <div>
-                <label for="name">নারীর সংখা</label>
-                <input name='female' type="text"
-                    class='px-3 py-2 border-gray-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 w-full rounded-xl text-sky-900'
-                    value='<?php echo $female ?>'>
-            </div>
-            <div>
-                <label for="name">মোট</label>
-                <input name='total' type="text"
-                    class='px-3 py-2 border-gray-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 w-full rounded-xl text-sky-900'
-                    value='<?php echo $total ?>'>
-            </div>
+
+
         </div>
 
 

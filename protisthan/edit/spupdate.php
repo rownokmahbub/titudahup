@@ -1,4 +1,10 @@
 <?php
+ob_start();
+
+// code 
+
+
+session_start();
 include '../../dbconnect.php';
 
   
@@ -17,3 +23,5 @@ include '../../dbconnect.php';
             header("location:pedit.php");
         }
     }
+ob_end_flush();
+?>

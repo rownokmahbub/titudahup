@@ -1,4 +1,10 @@
 <?php
+ob_start();
+
+// code 
+
+
+session_start();
 include '../../dbconnect.php';
 
 
@@ -21,3 +27,5 @@ if (isset($_POST['submit'])) {
         header("location:pedit.php");
     }
 }
+ob_end_flush();
+?>
