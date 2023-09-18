@@ -65,9 +65,7 @@ if (isset($_REQUEST['id'])) {
         </div>
         <div class="flex justify-between items-center">
             <p>ভোটার আইডি : <span><?= $voterid ?></span> </p>
-            <?php
-            echo "ইস্যু তারিখ : " . date("Y/m/d") . "<br>";
-            ?>
+
 
 
         </div>

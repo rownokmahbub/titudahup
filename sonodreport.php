@@ -60,9 +60,7 @@ if (isset($_REQUEST['id'])) {
         <div class="flex justify-between items-center">
             <p class=''>স্মারক নম্বর : <span><?= $rid ?></span></p>
             <p class=''>তারিখ : <span><?= $date ?></span> <br>
-                <?php
-                echo "ইস্যু তারিখ : " . date("Y/m/d") . "<br>";
-                ?>
+
             </p>
 
 
