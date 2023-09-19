@@ -45,6 +45,7 @@ if ($email == null) {
                 <form method='POST' action='./shikkhareg.php' class="space-y-5 flex flex-col items-start justify-start">
                     <input class='bg-gray-50 border border-gray-300 text-sky-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5' type="text" name="name" id="" placeholder='শিক্ষা প্রতিষ্ঠানের নাম যোগ  করুন...'>
                     <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " name='sdhoron'>
+                        <option  selected disabled>শিক্ষা প্রতিষ্ঠানের ধরন </option>
                         <option value='কলেজ'>কলেজ</option>
                         <option value="মাধ্যমিক বিদ্যালয়">মাধ্যমিক বিদ্যালয়</option>
                         <option value="নিম্ন মাধ্যমিক বিদ্যালয়">নিম্ন মাধ্যমিক বিদ্যালয়</option>
@@ -97,6 +98,7 @@ if ($email == null) {
                 <form method='POST' action='./uprotisthanreg.php' class="space-y-5 flex flex-col items-start justify-start">
                     <input class='bg-gray-50 border border-gray-300 text-sky-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5' type="text" name="name" id="" placeholder='ইউনিয়নের প্রতিষ্ঠানের নাম যোগ  করুন...'>
                     <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " name='udhoron'>
+                        <option  selected disabled>প্রতিষ্ঠানের ধরন </option>
                         <option value='ডাকঘর'>ডাকঘর</option>
                         <option value='গ্রাম'>গ্রাম</option>
                         <option value='মৌজা'>মৌজা</option>
