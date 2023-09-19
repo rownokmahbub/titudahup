@@ -118,7 +118,7 @@ if (isset($_REQUEST['id'])) {
               <input class='px-2 py-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 border border-gray-300 rounded-xl w-full focus:outline-blue-400' type="text" name="voterid" placeholder='ভোটার আইডি' value="<?php echo $voterid; ?>">
               <input class='px-2 py-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 border border-gray-300 rounded-xl w-full focus:outline-blue-400' type="text" name="mnum" placeholder='আবেদনকারীর মোবাইল নাম্বার' value="<?php echo $mobileno; ?>">
               <input class='px-2 py-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 border border-gray-300 rounded-xl w-full focus:outline-blue-400' type="text" name="aname" placeholder='আবেদনকারীর নাম' value="<?php echo $aname; ?>">
-              <input class='px-2 py-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 border border-gray-300 rounded-xl w-full focus:outline-blue-400' type="text" name="aname" placeholder='তারিখ' value="<?php echo $date; ?>">
+              <input class='px-2 py-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 border border-gray-300 rounded-xl w-full focus:outline-blue-400' type="text" name="date" placeholder='তারিখ' value="<?php echo $date; ?>">
             </div>
 
             <div class="font-semibold text-xl mb-4 text-center">ওয়ারেশ গণের নাম</div>
