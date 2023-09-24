@@ -54,6 +54,7 @@
         <table id="myTable" class="cell-border display responsive wrap" style="width:100%">
             <thead>
                 <tr>
+                    <th>ক্রমিক নং</th>
                     <th>নাম</th>
                     <th>পিতা/স্বামীর নাম </th>
                     <th>গ্রাম</th>
@@ -74,6 +75,7 @@
                 ?>
                     <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
 
+                        <td class=''><?= $row['slno'] ?></td>
                         <td class=''><?= $row['name'] ?></td>
                         <td class=''><?= $row['fatherhusband'] ?></td>
                         <td class=''><?= $row['gram'] ?></td>
