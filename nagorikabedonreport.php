@@ -21,16 +21,16 @@ if (isset($_REQUEST['id'])) {
     <title> ট্যাক্স ডাটা এন্ট্রি </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
+    tailwind.config = {
+        theme: {
 
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
+            extend: {
+                colors: {
+                    clifford: '#da373d',
                 }
             }
         }
+    }
     </script>
 </head>
 
@@ -65,9 +65,10 @@ if (isset($_REQUEST['id'])) {
         </p>
         <p>বিষয়ঃ নাগরিক সনদ পত্র প্রদান প্রসঙ্গে।</p>
         <p class='my-2'>জনাব,</p>
-        <p class="ml-10 my-2">যথাবিহিত সম্মান প্রদর্শন পূর্বক বিনীত নিবেদন এই যে, আমি আপনার ইউনিয়নের একজন স্থায়ী বাসিন্দা। আমার একটি নাগরিক সনদ পত্র প্রয়োজন।</p>
+        <p class="ml-10 my-2">যথাবিহিত সম্মান প্রদর্শন পূর্বক বিনীত নিবেদন এই যে, আমি আপনার ইউনিয়নের একজন স্থায়ী
+            বাসিন্দা। আমার একটি নাগরিক সনদ পত্র প্রয়োজন।</p>
         <div class="flex flex-col justify-center items-center">
-            <div class='flex justify-between w-full my-10'>
+            <div class='flex justify-between  w-full my-10'>
                 <div class='w-full text-center font-medium border border-black'>
 
                     <p class='border border-black px-4 py-2'>নাম</p>
@@ -98,7 +99,8 @@ if (isset($_REQUEST['id'])) {
             </div>
         </div>
 
-        <p class="ml-10 my-2">অতএব হুজুর সমীপে আমার আবেদন, বর্ণিত বিষযটি সদয় বিবেচনা করে উপরে বর্ণিত ছক মোতাবেক যাতে আমি একটি নাগরিক সনদ পত্র পাই তার প্রয়োজনীয় ব্যবস্থা গ্রহণ করতে মর্জি হয়।</p>
+        <p class="ml-10 my-2">অতএব হুজুর সমীপে আমার আবেদন, বর্ণিত বিষযটি সদয় বিবেচনা করে উপরে বর্ণিত ছক মোতাবেক যাতে আমি
+            একটি নাগরিক সনদ পত্র পাই তার প্রয়োজনীয় ব্যবস্থা গ্রহণ করতে মর্জি হয়।</p>
         <div class=' absolute right-28 bottom-0 flex flex-col justify-end items-center'>
             <p>বিনীত নিবেদক,</p>
             <p>মোঃ আনোয়ার হোসেন</p>

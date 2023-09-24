@@ -21,16 +21,16 @@ if (isset($_REQUEST['id'])) {
     <title> ট্যাক্স ডাটা এন্ট্রি </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
+    tailwind.config = {
+        theme: {
 
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
+            extend: {
+                colors: {
+                    clifford: '#da373d',
                 }
             }
         }
+    }
     </script>
 </head>
 
@@ -83,7 +83,7 @@ if (isset($_REQUEST['id'])) {
         ?>
         <input type="hidden" name="hid" value="<?php echo $rid; ?>">
         <p class='text-center font-medium text-2xl'>ওয়ারেশ সনদ পত্র আবেদন ফরম</p>
-        <p class='text-center font-medium text-lg'>পরিচিতি / স্মারক নম্বরঃ <span><?= $rid ?></span></p>
+        <p class='text-center font-medium text-lg'>স্মারক নম্বরঃ <span><?= $rid ?></span></p>
         <p>বরাবর,</p>
         <p class="ml-10 my-2">চেয়ারম্যান, <br>
             ৬নং তিতুদহ ইউনিয়ন পরিষদ, <br>
@@ -91,7 +91,8 @@ if (isset($_REQUEST['id'])) {
         </p>
         <p>বিষয়ঃ ওয়ারেশ সনদ পত্র প্রদান প্রসঙ্গে।</p>
         <p class='my-2'>জনাব,</p>
-        <p class="ml-10 my-2">যথাবিহিত সম্মান প্রদর্শন পূর্বক বিনীত নিবেদন এই যে, আমি আপনার ইউনিয়নের নিম্ন-লিখিত ছকে বর্ণিত ব্যক্তির নামে একটি ওয়ারেশ সনদ পত্র প্রয়োজন।</p>
+        <p class="ml-10 my-2">যথাবিহিত সম্মান প্রদর্শন পূর্বক বিনীত নিবেদন এই যে, আমি আপনার ইউনিয়নের নিম্ন-লিখিত ছকে
+            বর্ণিত ব্যক্তির নামে একটি ওয়ারেশ সনদ পত্র প্রয়োজন।</p>
 
         <div class='flex justify-between items-center my-5'>
             <div class="space-y-1">
@@ -228,7 +229,8 @@ if (isset($_REQUEST['id'])) {
             </tbody>
         </table>
 
-        <p class="ml-10 my-5">অতএব হুজুর সমীপে আমার আবেদন, বর্ণিত বিষযটি সদয় বিবেচনা করে উপরে বর্ণিত ছক মোতাবেক যাতে আমি একটি ওয়ারেশ সনদ পত্র পাই তার প্রয়োজনীয় ব্যবস্থা গ্রহণ করতে মর্জি হয়।</p>
+        <p class="ml-10 my-5">অতএব হুজুর সমীপে আমার আবেদন, বর্ণিত বিষযটি সদয় বিবেচনা করে উপরে বর্ণিত ছক মোতাবেক যাতে আমি
+            একটি ওয়ারেশ সনদ পত্র পাই তার প্রয়োজনীয় ব্যবস্থা গ্রহণ করতে মর্জি হয়।</p>
         <div class=' absolute right-28 bottom-0 flex flex-col justify-end items-center'>
             <p>বিনীত নিবেদক,</p>
             <p>মোঃ আনোয়ার হোসেন</p>

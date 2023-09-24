@@ -21,16 +21,16 @@ if (isset($_REQUEST['id'])) {
     <title> ট্যাক্স ডাটা এন্ট্রি </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
+    tailwind.config = {
+        theme: {
 
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
+            extend: {
+                colors: {
+                    clifford: '#da373d',
                 }
             }
         }
+    }
     </script>
 </head>
 
