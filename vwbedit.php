@@ -1,5 +1,5 @@
 <?php
-include '../../dbconnect.php';
+include './dbconnect.php';
 
 if (isset($_REQUEST['id'])) {
     $kid = $_REQUEST['id'];
@@ -28,7 +28,7 @@ if (isset($_REQUEST['id'])) {
 </head>
 
 <body class="md:px-32 mx-auto bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 py-20">
-    <a href="./pedit.php" class="text-center font-semibold flex gap-3 items-center">
+    <a href="./vwbtable.php" class="text-center font-semibold flex gap-3 items-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M19 12H6M12 5l-7 7 7 7" />
@@ -39,6 +39,7 @@ if (isset($_REQUEST['id'])) {
     <?php
 
     $kid = $result['id'];
+    $slno = $result['slno'];
     $name = $result['name'];
     $fatherhusband = $result['fatherhusband'];
     $gram = $result['gram'];
@@ -49,11 +50,17 @@ if (isset($_REQUEST['id'])) {
 
 
     ?>
-    <form class="mt-5 px-5 flex flex-col gap-4 justify-center items-center max-w-2xl mx-auto" action="vwbupdate.php"
+    <form class="mt-5 px-5 flex flex-col gap-4 justify-center items-center max-w-2xl mx-auto" action="./vwbupdate.php"
         method="POST">
 
         <input type="hidden" name="hid" value="<?php echo $kid; ?>">
         <div class="grid grid-cols-1  gap-5 w-full">
+            <div>
+                <label for="name">ক্রমিক নং</label>
+                <input name='slno' type="text"
+                    class='px-3 py-2 border-gray-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 w-full rounded-xl text-sky-900'
+                    value='<?php echo $slno ?>'>
+            </div>
             <div>
                 <label for="name">নাম</label>
                 <input name='name' type="text"

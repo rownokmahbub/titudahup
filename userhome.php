@@ -83,6 +83,12 @@ if ($email == null) {
                 <a href='masisutable.php'
                     class='px-4 py-2 cursor-pointer rounded-full text-white font-semibold text-base bg-purple-800 hover:bg-purple-600  duration-300 text-center transition'>মা
                     ও শিশু ভাতা এডিট</a>
+                <a href='vwbentry.php'
+                    class='px-4 py-2 cursor-pointer rounded-full text-white font-semibold text-base bg-sky-800 hover:bg-sky-600  duration-300 text-center transition'>ভিডব্লিউবি
+                    এন্ট্রি </a>
+                <a href='vwbtable.php'
+                    class='px-4 py-2 cursor-pointer rounded-full text-white font-semibold text-base bg-purple-800 hover:bg-purple-600  duration-300 text-center transition'>ভিডব্লিউবি
+                    এডিট</a>
             </div>
             <br><br>
             <button

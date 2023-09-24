@@ -5,11 +5,12 @@ ob_start();
 
 
 session_start();
-include '../../dbconnect.php';
+include './dbconnect.php';
 
 
 if (isset($_POST['submit'])) {
     $id = $_POST['hid'];
+    $slno= $_POST['slno'];
     $name= $_POST['name'];
     $fatherhusband= $_POST['fatherhusband'];
     $gram= $_POST['gram'];
@@ -21,10 +22,10 @@ if (isset($_POST['submit'])) {
 
 
 
-    $edit="UPDATE `vwb` SET `name`='$name',`fatherhusband`='$fatherhusband',`gram`='$gram',`word`='$word',`voterid`='$voterid',`cokro`='$cokro' WHERE id=$id";
+    $edit="UPDATE `vwb` SET `slno`='$slno', `name`='$name',`fatherhusband`='$fatherhusband',`gram`='$gram',`word`='$word',`voterid`='$voterid',`cokro`='$cokro' WHERE id=$id";
     $query=mysqli_query($con,$edit);
     if($query){
-        header("location:pedit.php");
+        header("location:vwbtable.php");
     }
 }
 ob_end_flush();
