@@ -3,6 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/titudahu/public_html/
     - /bin/cp * $DEPLOYPATH
-    - /bin/cp -R protisthan $DEPLOYPATH
     - /bin/cp -R Assets $DEPLOYPATH
     
