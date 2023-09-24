@@ -68,31 +68,31 @@ if (isset($_REQUEST['id'])) {
                     value='<?php echo $name ?>'>
             </div>
             <div>
-                <label for="name">ওয়ার্ড</label>
+                <label for="name">পিতা/স্বামীর নাম </label>
                 <input name='fatherhusband' type="text"
                     class='px-3 py-2 border-gray-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 w-full rounded-xl text-sky-900'
                     value='<?php echo $fatherhusband ?>'>
             </div>
             <div>
-                <label for="name">পুরুষের সংখা</label>
+                <label for="name">গ্রাম</label>
                 <input name='gram' type="text"
                     class='px-3 py-2 border-gray-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 w-full rounded-xl text-sky-900'
                     value='<?php echo $gram ?>'>
             </div>
             <div>
-                <label for="name">নারীর সংখা</label>
+                <label for="name">ওয়ার্ড</label>
                 <input name='word' type="text"
                     class='px-3 py-2 border-gray-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 w-full rounded-xl text-sky-900'
                     value='<?php echo $word ?>'>
             </div>
             <div>
-                <label for="name">মোট</label>
+                <label for="name">ভোটার আইডি</label>
                 <input name='voterid' type="text"
                     class='px-3 py-2 border-gray-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 w-full rounded-xl text-sky-900'
                     value='<?php echo $voterid ?>'>
             </div>
             <div>
-                <label for="name">মোট</label>
+                <label for="name">চক্র</label>
                 <input name='cokro' type="text"
                     class='px-3 py-2 border-gray-300 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 w-full rounded-xl text-sky-900'
                     value='<?php echo $cokro ?>'>

@@ -148,7 +148,7 @@ if ($email == null) {
                     <div class="flex gap-3 justify-center items-center w-full">
                         <button
                             class='px-4 md:px-20 py-2.5 cursor-pointer rounded-xl text-white font-semibold text-base bg-sky-800 hover:bg-sky-600 duration-300 transition'
-                            value="upload" name="submit" type="submit">Create</button>
+                            value="upload" name="submit" type="submit">জমা দিন</button>
                        
                     </div>
 
