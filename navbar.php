@@ -73,7 +73,7 @@
                                         কর্মচারী</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-primary hover:text-white ">ভিডিও</a>
+                                    <a href="videoshow.php" class="block px-4 py-2 hover:bg-primary hover:text-white ">ভিডিও</a>
                                 </li>
                             </ul>
 
