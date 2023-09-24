@@ -9,9 +9,11 @@ deployment:
       - /bin/cp -R protisthan/edit $DEPLOYPATH
     - /bin/cp -R protisthan/delete $DEPLOYPATH
     - /bin/cp -R gallery $DEPLOYPATH
-  
+    - /bin/cp -R gallery/edit $DEPLOYPATH
+    - /bin/cp -R gallery/delete $DEPLOYPATH
     - /bin/cp -R home $DEPLOYPATH
-   
+    - /bin/cp -R home/edit $DEPLOYPATH
+    - /bin/cp -R home/delete $DEPLOYPATH
     - /bin/cp -R DATABASE $DEPLOYPATH
 
 
