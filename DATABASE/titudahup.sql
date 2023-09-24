@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Sep 18, 2023 at 11:11 AM
--- Server version: 5.7.42
--- PHP Version: 8.1.16
+-- Host: localhost
+-- Generation Time: Sep 24, 2023 at 11:12 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,14 +37,15 @@ CREATE TABLE `bidhobavata` (
   `word` varchar(255) NOT NULL,
   `voterid` varchar(255) NOT NULL,
   `montobbo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `bidhobavata`
 --
 
 INSERT INTO `bidhobavata` (`id`, `slno`, `name`, `fatherhusband`, `mothername`, `gram`, `word`, `voterid`, `montobbo`) VALUES
-(1, '1', 'rownok', 'mahsin ali', 'rakha', 'সোনাতনপুর', '৬', '34234534556', 'nai kono');
+(1, '1', 'rownok', 'mahsin ali', 'rakha', 'সোনাতনপুর', '৬', '34234534556', ''),
+(2, '২', 'মোছাঃ রওশনারা বেগম', 'মৃত আঃ জলিল', 'মোছাঃ আমেনা খাতুন', 'গিরিশনগর', '২', '2350092454', '');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,7 @@ CREATE TABLE `boyoskovata` (
   `word` varchar(255) NOT NULL,
   `voterid` varchar(255) NOT NULL,
   `montobbo` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `boyoskovata`
@@ -85,7 +86,7 @@ CREATE TABLE `gram` (
   `male` varchar(255) NOT NULL,
   `female` varchar(255) NOT NULL,
   `total` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gram`
@@ -102,7 +103,8 @@ INSERT INTO `gram` (`id`, `name`, `word`, `male`, `female`, `total`) VALUES
 (9, 'বলদিয়া', '৪', '০', '০', '০'),
 (10, 'বড়শলুয়া', '৫', '০', '০', '০'),
 (11, 'হুলিয়ামারী', '৮', '০', '০', '০'),
-(12, 'তিতুদহ', '৯', '০', '০', '০');
+(12, 'তিতুদহ', '৯', '০', '০', '০'),
+(13, 'তিতুদহ', '৯', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -112,8 +114,8 @@ INSERT INTO `gram` (`id`, `name`, `word`, `male`, `female`, `total`) VALUES
 
 CREATE TABLE `khobor` (
   `id` int(11) NOT NULL,
-  `khobor` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `khobor` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `khobor`
@@ -134,7 +136,7 @@ CREATE TABLE `kormokortaborgo` (
   `podobi` varchar(255) NOT NULL,
   `mobileno` varchar(255) NOT NULL,
   `filename` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `kormokortaborgo`
@@ -155,7 +157,8 @@ INSERT INTO `kormokortaborgo` (`id`, `name`, `podobi`, `mobileno`, `filename`) V
 (13, 'মোঃ হাসানুজ্জামান', 'গ্রাম পুলিশ', '০১৯৯০৮৮৩৪৪১', 'হাসান.png'),
 (14, 'মোঃ আবু তালেব', 'গ্রাম পুলিশ', '০১৯৩৩১৫৮৯৮৬', 'তালেব.jpg'),
 (15, 'মোঃ ইনামুল হক', 'গ্রাম পুলিশ', '০১৯৪০৬৭৬০৪৩', 'এনামুল.jpg'),
-(16, 'মোঃ নাজমুল হুসাইন', 'গ্রাম পুলিশ', '০১৯৮১৯১৭২৮৫', 'নাজমুল.jpg');
+(16, 'মোঃ নাজমুল হুসাইন', 'গ্রাম পুলিশ', '০১৯৮১৯১৭২৮৫', 'নাজমুল.jpg'),
+(17, 'fregeg', '', '', 'pexels-media-dung-9716407 (360p).mp4');
 
 -- --------------------------------------------------------
 
@@ -167,8 +170,8 @@ CREATE TABLE `log` (
   `id` int(10) NOT NULL,
   `email` varchar(50) NOT NULL,
   `activity` varchar(50) NOT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `log`
@@ -275,7 +278,27 @@ INSERT INTO `log` (`id`, `email`, `activity`, `time`) VALUES
 (226, 'rownok2001@gmail.com', 'Log Out', '2023-09-16 11:44:04'),
 (227, 'rownok2001@gmail.com', 'Log Out', '2023-09-16 11:46:45'),
 (228, 'rownok2001@gmail.com', 'Log Out', '2023-09-16 11:48:46'),
-(229, 'rownok2001@gmail.com', 'Log Out', '2023-09-16 11:54:50');
+(229, 'rownok2001@gmail.com', 'Log Out', '2023-09-16 11:54:50'),
+(230, 'rownok2001@gmail.com', 'Log Out', '2023-09-18 09:55:14'),
+(231, 'rownok2001@gmail.com', 'Log Out', '2023-09-18 09:57:13'),
+(232, 'rownok2001@gmail.com', 'Log Out', '2023-09-18 12:50:25'),
+(233, 'rownok2001@gmail.com', 'Log Out', '2023-09-19 00:12:20'),
+(234, 'rownok2001@gmail.com', 'Log Out', '2023-09-19 00:16:31'),
+(235, 'rownok2001@gmail.com', 'Log Out', '2023-09-19 00:18:42'),
+(236, 'rownok2001@gmail.com', 'Log Out', '2023-09-19 00:22:33'),
+(237, 'mahsin.ali4@gmail.com', 'Log Out', '2023-09-19 00:42:58'),
+(238, 'rownok2001@gmail.com', 'Log Out', '2023-09-19 01:22:07'),
+(239, 'rownok2001@gmail.com', 'Log Out', '2023-09-19 01:26:12'),
+(240, 'rownok2001@gmail.com', 'Log Out', '2023-09-19 01:32:43'),
+(241, 'rownok2001@gmail.com', 'Log Out', '2023-09-24 00:18:57'),
+(242, 'rownok2001@gmail.com', 'Log Out', '2023-09-24 00:29:01'),
+(243, 'rownok2001@gmail.com', 'Log Out', '2023-09-24 01:13:33'),
+(244, 'rownok2001@gmail.com', 'Log Out', '2023-09-24 01:14:02'),
+(245, 'rownok2001@gmail.com', 'Log Out', '2023-09-24 01:44:46'),
+(246, 'rownok2001@gmail.com', 'Log Out', '2023-09-24 04:58:37'),
+(247, 'rownok2001@gmail.com', 'Log Out', '2023-09-24 05:12:32'),
+(248, 'rownok2001@gmail.com', 'Log Out', '2023-09-24 05:35:38'),
+(249, 'rownok2001@gmail.com', 'Log Out', '2023-09-24 09:06:08');
 
 -- --------------------------------------------------------
 
@@ -293,14 +316,15 @@ CREATE TABLE `masisuvata` (
   `word` varchar(255) NOT NULL,
   `voterid` varchar(255) NOT NULL,
   `montobbo` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `masisuvata`
 --
 
 INSERT INTO `masisuvata` (`id`, `slno`, `name`, `fatherhusband`, `mothername`, `gram`, `word`, `voterid`, `montobbo`) VALUES
-(2, '1', 'rownok', 'mahsin ali', 'rakha', '৬২ নং আড়িয়া', '৪', '34234534556', 'fdfdf');
+(2, '1', 'rownok', 'mahsin ali', 'rakha', '৬২ নং আড়িয়া', '৪', '34234534556', 'fdfdf'),
+(3, '২', 'মোঃ মহাসীন আলী', 'মৃত আঃ জলিল', 'মোছাঃ আমেনা খাতুন', 'আড়িয়ারচক', '২', '৬৭৬৫৭৬৫৭', '');
 
 -- --------------------------------------------------------
 
@@ -313,7 +337,7 @@ CREATE TABLE `mouja` (
   `name` varchar(255) NOT NULL,
   `word` varchar(255) NOT NULL,
   `moujano` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mouja`
@@ -323,7 +347,10 @@ INSERT INTO `mouja` (`id`, `name`, `word`, `moujano`) VALUES
 (2, 'amir', '1', '৪'),
 (3, 'ছোটশলুয়া', '', '৩'),
 (4, 'ছোটশলুয়া', '', '৩'),
-(5, 'ছোটশলুয়া', '', '৩');
+(5, 'ছোটশলুয়া', '', '৩'),
+(6, 'rownok', '2', '৪'),
+(7, 'বলদিয়া', '5', ''),
+(8, 'বলদিয়া', '5', '৪');
 
 -- --------------------------------------------------------
 
@@ -346,14 +373,14 @@ CREATE TABLE `nagorik` (
   `gender` varchar(255) NOT NULL,
   `dakghor` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `nagorik`
 --
 
 INSERT INTO `nagorik` (`id`, `sarok`, `name`, `fathername`, `mothername`, `husband`, `gram`, `word`, `birthno`, `voterid`, `mobileno`, `gender`, `dakghor`, `date`) VALUES
-(9, '1', 'মোঃ কাবিল হোসেন', 'মোঃ আনছার আলী', 'মোছাঃ সাহিদা বেগম', ' ', 'নুরুল্লাপুর', '1', ' ', '8228274836', ' ', 'পুরুষ', 'তিতুদহ', '12-07-2023'),
+(9, '1', 'মোঃ কাবিল হোসেন', 'মোঃ আনছার আলী', 'মোছাঃ সাহিদা বেগম', ' fsdfdsf', 'নুরুল্লাপুর', '1', ' 3243242424', '8228274836', ' 342342434', 'পুরুষ', 'তিতুদহ', '12-07-2023'),
 (10, '2', 'মোছাঃ সুমি খাতুন', 'শামসুল হুদা', 'সুফিয়া খাতুন', '', '৬২নং আড়িয়া', '2', '20001832383039541', '', '', 'নারী', 'তিতুদহ', ''),
 (11, '3', 'মোছাঃ ঝর্না খাতুন', 'মোঃ ঝড়– মন্ডল', 'মোছাঃ আদরী খাতুন', '', '৬২নং আড়িয়া', '2', '20001832383039541', '', '', 'নারী', 'তিতুদহ', ''),
 (12, '4', 'মোঃ আঃ সামাদ', 'মোঃ লাল্টু মিয়া', 'মোছাঃ রোজিনা খাতুন', '', 'তিতুদহ', '9', '20001832383039541', '', '', 'পুরুষ', 'তিতুদহ', ''),
@@ -741,7 +768,8 @@ INSERT INTO `nagorik` (`id`, `sarok`, `name`, `fathername`, `mothername`, `husba
 (396, '397', 'শ্রীমতি মিথিলা দাস', 'শ্রী আনন্দ কুমার দাষ', 'শ্রী সীমা রানী', ' ', 'বড়শলুয়া', '৬', ' ', ' ', '20161812383112447', 'নারী', 'তিতুদহ', ''),
 (397, '398', 'শ্রী সুব্রত দাস', 'শ্রী সুকুমার কুমার দাস', 'শ্রীমতি রিবা', ' ', 'বড়শলুয়া', '৬', '01936921528', ' ', '20161812383111316', 'পুরুষ', 'তিতুদহ', ''),
 (398, '399', 'বিষ্ণু দাস', 'শ্রী বাবুল কুমার দাষ', 'শ্রীমতি বিজলী বালা দাসী', ' ', 'বড়শলুয়া', '৬', '20161812383108223', ' ', ' ', 'পুরুষ', 'তিতুদহ', ''),
-(399, '400', 'rownok', 'mahsin', 'rakha', 'amir', 'চাঁদপুর', '৩', '34534543', '3432423424', '02345436565', 'পুরুষ', 'তিতুদহ', '2023-09-14');
+(399, '400', 'rownok', 'mahsin', 'rakha', 'amir', 'চাঁদপুর', '৩', '34534543', '3432423424', '02345436565', 'পুরুষ', 'তিতুদহ', '2023-09-14'),
+(400, '401', 'মোঃ তসলিমুজ্জামান', 'মৃত আঃ জলিল', 'মোছাঃ আমেনা খাতুন', ' ', 'হুলিয়ামারী', '৮', '', '', '', 'পুরুষ', 'তিতুদহ', '92023-08-18');
 
 -- --------------------------------------------------------
 
@@ -751,8 +779,8 @@ INSERT INTO `nagorik` (`id`, `sarok`, `name`, `fathername`, `mothername`, `husba
 
 CREATE TABLE `notice` (
   `id` int(11) NOT NULL,
-  `notice` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `notice` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `notice`
@@ -769,11 +797,11 @@ INSERT INTO `notice` (`id`, `notice`) VALUES
 
 CREATE TABLE `porishodborgo` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-  `podobi` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-  `mobileno` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
-  `filename` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `podobi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `mobileno` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `filename` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `porishodborgo`
@@ -811,7 +839,7 @@ CREATE TABLE `protibondhivata` (
   `word` varchar(255) NOT NULL,
   `voterid` varchar(255) NOT NULL,
   `montobbo` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `protibondhivata`
@@ -828,8 +856,8 @@ INSERT INTO `protibondhivata` (`id`, `slno`, `name`, `fatherhusband`, `mothernam
 
 CREATE TABLE `sebarmullo` (
   `id` int(11) NOT NULL,
-  `mullo` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `mullo` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sebarmullo`
@@ -837,7 +865,7 @@ CREATE TABLE `sebarmullo` (
 
 INSERT INTO `sebarmullo` (`id`, `mullo`) VALUES
 (4, '১. ওয়ারেশ সনদপত্র ১০০ টাকা।'),
-(5, '২. উত্তরাধিকারী সনদপ্রত ১০০ টাকা।'),
+(5, '২. উত্তরাধিকারী সনদপত্র ১০০ টাকা।'),
 (6, '৩. নাগরিক সনদপত্র ২০ টাকা।'),
 (7, '৪. চারিত্রিক সনদপত্র ৩০ টাকা।'),
 (8, '৫. ট্রেডলােইসেন্স ফি ও কর ব্যাবসার ধরণ অনুযায়ী।'),
@@ -851,8 +879,8 @@ INSERT INTO `sebarmullo` (`id`, `mullo`) VALUES
 
 CREATE TABLE `sebarsorto` (
   `id` int(11) NOT NULL,
-  `sorto` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `sorto` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sebarsorto`
@@ -862,7 +890,7 @@ INSERT INTO `sebarsorto` (`id`, `sorto`) VALUES
 (2, '১.ট্রেডলাইসেন্স বাদে সকল সেবা গ্রহণের ক্ষেত্রে আবেদনকারীকে ইউনিয়নের স্থায়ী বাসিন্দা হতে হবে।'),
 (3, '২. হাল নাগাদ ট্যাক্স পরিশোধ থাকতে হবে।'),
 (4, '৩.ভোটার ও জন্মনিবন্ধন কার্ড সঙ্গে আনতে হবে।'),
-(5, '৪.ওয়ারেশ সনদপত্র গ্রহণের ক্ষেত্রে আবদেন পত্রে সংশ্লিষ্ট সদস্যের সুপারিশ থাকতে হবে।');
+(5, '৪.ওয়ারেশ সনদপত্র গ্রহণের ক্ষেত্রে আবদেন পত্রে সংশ্লিষ্ট সদস্যের সুপারিশ থাকতে হবে। প্রত্যেক ওয়ারেশের ভোটার আইডি বা জন্ম-নিবন্ধন কাডের ফটকপি জমা দিতে হবে।');
 
 -- --------------------------------------------------------
 
@@ -879,7 +907,7 @@ CREATE TABLE `shikkha` (
   `madracha` varchar(255) NOT NULL,
   `community` varchar(255) NOT NULL,
   `shikkharhar` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `shikkha`
@@ -898,7 +926,7 @@ CREATE TABLE `shikkhaprotisthan` (
   `id` int(11) NOT NULL,
   `sname` varchar(255) NOT NULL,
   `sdhoron` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `shikkhaprotisthan`
@@ -920,7 +948,7 @@ CREATE TABLE `subuser` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `subuser`
@@ -954,7 +982,7 @@ CREATE TABLE `tadeentry` (
   `upozela` varchar(255) NOT NULL,
   `zela` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `tadeentry`
@@ -1560,7 +1588,8 @@ INSERT INTO `tadeentry` (`id`, `licence_no`, `name`, `father_husband`, `mother_n
 (2377, '597', 'মোঃ আব্বাস আলী', 'মোঃ ওয়াজেত শেখ', 'মোছাঃ সাজেদা পারভীন', '৭', 'বড়শলুয়া', 'মেসার্স আব্বাস গরু খামার', 'গরু মোটাতাজাকরণ', '৪০০', '', '', 'চুয়াডাঙ্গা সদর', 'চুয়াডাঙ্গা', ''),
 (2378, '598', 'মোঃ ফারুক হোসেন', 'মোঃ আবু তালেব', 'মোছাঃ মলঞ্চা বেগম', '১', 'চাঁদপুর', 'মেসার্স স্বাধীন মেডিক্যাল হল', 'ঔষধ ফার্মেসি', '৩০০', '', '', 'চুয়াডাঙ্গা সদর', 'চুয়াডাঙ্গা', ''),
 (2380, '599', 'rownok', 'mahsin', 'fdsfsf', '৩', '৬২ নং আড়িয়া', 'cjgjj', 'gjgjgh', '65', '3424424244', '02345436565', 'chuadanga', 'chuadanga', '2023-09-15'),
-(2381, '600', 'rownokggg', 'hfhfhf', 'fhfhgfh', '৪', 'তিতুদহ', 'cjgjj', 'gjgjgh', '65', '3424424244', '02345436565', 'chuadanga', 'chuadanga', '2023-09-12');
+(2381, '600', 'rownokggg', 'hfhfhf', 'fhfhgfh', '৪', 'তিতুদহ', 'cjgjj', 'gjgjgh', '65', '3424424244', '02345436565', 'chuadanga', 'chuadanga', '2023-09-12'),
+(2382, '601', 'মো কাছেদ আলী', 'মোঃ পুটি মন্ডল', 'গনজেরা বেগম', '৮', 'গিরিশনগর', ' ', ' ', '500', ' ', ' ', ' ', ' ', '2023-09-18');
 
 -- --------------------------------------------------------
 
@@ -1576,7 +1605,7 @@ CREATE TABLE `taxentry` (
   `gram` varchar(255) NOT NULL,
   `ward` varchar(255) NOT NULL,
   `totaltax` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `taxentry`
@@ -6817,7 +6846,8 @@ INSERT INTO `taxentry` (`id`, `holdingno`, `name`, `fatherhusband`, `gram`, `war
 (5255, '90527', 'মোঃ ডালিম', 'মৃত রবিউল ইসলাম', 'তিতুদহ দক্ষিনপাড়া', '9', '100'),
 (5256, '90528', 'মোঃ ফরিদ', 'হাফিজুল ইসলাম', 'তিতুদহ দক্ষিনপাড়া', '9', '240'),
 (5257, '90529', 'মোছাঃ খাইরুন নাহার মিমি', 'সাবদার আলী', 'তিতুদহ দক্ষিনপাড়া', '9', '300'),
-(5258, '90530', 'মোঃ পিয়ার আলী', 'আবুল হোসেন', 'তিতুদহ দক্ষিনপাড়া', '9', '200');
+(5258, '90530', 'মোঃ পিয়ার আলী', 'আবুল হোসেন', 'তিতুদহ দক্ষিনপাড়া', '9', '200'),
+(5259, '90531', 'মোঃ মহাসীন আলী', 'মোঃ মহাসীন আলী', 'নুরুল্লাপুর', '১', '500');
 
 -- --------------------------------------------------------
 
@@ -6839,7 +6869,7 @@ CREATE TABLE `uniondetails` (
   `edgah` varchar(255) NOT NULL,
   `mondir` varchar(255) NOT NULL,
   `sosan` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `uniondetails`
@@ -6856,8 +6886,8 @@ INSERT INTO `uniondetails` (`id`, `dakghor`, `gram`, `mouja`, `hatbazar`, `polic
 
 CREATE TABLE `unionporiciti` (
   `id` int(11) NOT NULL,
-  `poriciti` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `poriciti` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `unionporiciti`
@@ -6877,7 +6907,7 @@ CREATE TABLE `upprotisthan` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `pdhoron` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `upprotisthan`
@@ -6885,7 +6915,9 @@ CREATE TABLE `upprotisthan` (
 
 INSERT INTO `upprotisthan` (`id`, `name`, `pdhoron`) VALUES
 (2, 'তিতুদহ বিশ্বাস পাড়া জামে মসজিদ ', 'ডাকঘর'),
-(3, 'তিতুদহ বড় বাজার ', 'মসজিদ');
+(3, 'তিতুদহ বড় বাজার ', 'মসজিদ'),
+(4, 'নুরুল্লাহ পুর জামে মসজিদ', 'মসজিদ'),
+(5, 'নুরুল্লাহ পুর জামে মসজিদ', 'মসজিদ');
 
 -- --------------------------------------------------------
 
@@ -6899,7 +6931,7 @@ CREATE TABLE `user` (
   `password` varchar(50) NOT NULL,
   `user_type` int(10) DEFAULT NULL,
   `block` varchar(50) DEFAULT 'no'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -6912,25 +6944,46 @@ INSERT INTO `user` (`id`, `email`, `password`, `user_type`, `block`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `video`
+--
+
+CREATE TABLE `video` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `video` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `video`
+--
+
+INSERT INTO `video` (`id`, `title`, `video`) VALUES
+(2, 'fdsfs', 'pexels-media-dung-9716407 (360p).mp4');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vwb`
 --
 
 CREATE TABLE `vwb` (
   `id` int(11) NOT NULL,
+  `slno` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `fatherhusband` varchar(255) NOT NULL,
   `gram` varchar(255) NOT NULL,
   `word` varchar(255) NOT NULL,
   `voterid` varchar(255) NOT NULL,
   `cokro` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `vwb`
 --
 
-INSERT INTO `vwb` (`id`, `name`, `fatherhusband`, `gram`, `word`, `voterid`, `cokro`) VALUES
-(3, 'rownok', 'dfdfdsf', 'বড়শলুয়া', '৩', '3432423424', '2023-24');
+INSERT INTO `vwb` (`id`, `slno`, `name`, `fatherhusband`, `gram`, `word`, `voterid`, `cokro`) VALUES
+(11, 1, 'fregeg', 'regreg', 'বলদিয়া', '২', '443545', 'rgerg'),
+(12, 1, 'fregeg', 'regreg', 'আড়িয়ারচক', '৩', '443545', 'rgerg');
 
 -- --------------------------------------------------------
 
@@ -6982,7 +7035,7 @@ CREATE TABLE `wares` (
   `r13` varchar(255) DEFAULT NULL,
   `r14` varchar(255) DEFAULT NULL,
   `r15` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `wares`
@@ -6991,7 +7044,7 @@ CREATE TABLE `wares` (
 INSERT INTO `wares` (`id`, `sarok`, `name`, `fathername`, `mothername`, `husband`, `gram`, `word`, `deathno`, `voterid`, `mobileno`, `aname`, `date`, `w1`, `w2`, `w3`, `w4`, `w5`, `w6`, `w7`, `w8`, `w9`, `w10`, `w11`, `w12`, `w13`, `w14`, `w15`, `r1`, `r2`, `r3`, `r4`, `r5`, `r6`, `r7`, `r8`, `r9`, `r10`, `r11`, `r12`, `r13`, `r14`, `r15`) VALUES
 (4, '1', 'মৃত রমজান আলী মালিতা', 'মৃত জফর মালিতা', '', '', 'বড়শলুয়া', '7', '', '', '', '', '', 'মৃত আলী আহাম্মদ মালিতা', 'মোছাঃ হাজেরা খাতুন', 'মোছাঃ ফাতেমা খাতুন', 'মোছাঃ সুফিয়া খাতুন', 'মোছাঃ হালিমা খাতুন', 'মোছাঃ আনেছা খাতুন', 'মৃত আকিরন নেছা', '', '', '', '', '', '', '', '', 'পুত্র', 'কন্যা', 'কন্যা', 'কন্যা', 'কন্যা', 'কন্যা', 'স্ত্রী', '', '', '', '', '', '', '', ''),
 (5, '2', 'মৃত শহর আলী শেখ', 'মৃত কলিম উদ্দীন শেখ', '', '', 'চাঁদপুর', '1', '', '', '', '', '', 'মোঃ আব্দুল বারিক', 'মোঃ ফজলুল হক', 'মোঃ মজনু হক', 'মোঃ হাবিবার রহমান', 'মোঃ আত্তাব আলী', 'মোঃ আব্দুল ছাত্তার', 'মোঃ আজাদ আলী', 'মোছাঃ ছকিনা খাতুন', 'মোছাঃ জরিনা খাতুন', 'মোছাঃ সাহিদা খাতুন', 'মোছাঃ জায়দা বেগম', '', '', '', '', 'পুত্র', 'পুত্র', 'কন্যা', 'কন্যা', 'কন্যা', '', '', '', '', '', '', '', '', '', ''),
-(6, '3', 'মৃত ইছাহাক আলী মন্ডল', 'মৃত মফিজ উদ্দীন', '', '', 'বড়শলুয়া', '6', '', '', '', '', '', 'মোঃ চাঁদ আলী', 'মোঃ ফজলুল হক', 'মোঃ মজনু হক', 'মোঃ হাবিবার রহমান', 'মোঃ আত্তাব আলী', 'মোঃ আব্দুল ছাত্তার', 'মোঃ আজাদ আলী', 'মোছাঃ ছকিনা খাতুন', 'মোছাঃ জরিনা খাতুন', 'মোছাঃ সাহিদা খাতুন', 'মোছাঃ জায়দা বেগম', '', '', '', '', 'পুত্র', 'পুত্র', 'পুত্র', 'পুত্র', 'পুত্র', 'পুত্র', 'পুত্র', 'কন্যা', 'কন্যা', 'কন্যা', 'স্ত্রী', '', '', '', ''),
+(6, '3', 'মৃত ইছাহাক আলী মন্ডল', 'মৃত মফিজ উদ্দীন', '', '', 'বড়শলুয়া', '6', '', '', '', '', '07-07-2023', 'মোঃ চাঁদ আলী', 'মোঃ ফজলুল হক', 'মোঃ মজনু হক', 'মোঃ হাবিবার রহমান', 'মোঃ আত্তাব আলী', 'মোঃ আব্দুল ছাত্তার', 'মোঃ আজাদ আলী', 'মোছাঃ ছকিনা খাতুন', 'মোছাঃ জরিনা খাতুন', 'মোছাঃ সাহিদা খাতুন', 'মোছাঃ জায়দা বেগম', '', '', '', '', 'পুত্র', 'পুত্র', 'পুত্র', 'পুত্র', 'পুত্র', 'পুত্র', 'পুত্র', 'কন্যা', 'কন্যা', 'কন্যা', 'স্ত্রী', '', '', '', ''),
 (7, '4', 'মৃত আদম আলী', 'মৃত রিয়াজদ্দীন মন্ডল', 'মৃত ছুরাতন নেছা', '', 'ছোটশলুয়া', '3', '', '', '', '', '', 'মোছাঃ সুফিয়া বেগম', 'মোঃ আব্দুল হামিদ', 'মোঃ আহম্মদ আলী', 'মোঃ জাহাঙ্গীর আলম', 'মোছাঃ মহিমা খাতুন', 'মোছাঃ শহিদা খাতুন', 'মোঃ রুহুল আমীন', 'মোঃ মমিনুল ইসলাম', 'মোঃ মিজানুর রহমান', '', '', '', '', '', '', 'স্ত্রী', 'পুত্র', 'পুত্র', 'পুত্র', 'কন্যা', 'কন্যা', 'পুত্র', 'পুত্র', 'পুত্র', '', '', '', '', '', ''),
 (8, '5', 'মৃত সাইদুর রহমান', 'মৃত বাহার আলী', 'মৃত সুজান নেছা', '', 'হুলিয়ামারী', '8', '', '', '', '', '', 'মোঃ মাসুদ রানা', 'মোঃ ইমরান হোসেন', 'মোছাঃ রেহেনা খাতুন', '', '', '', '', '', '', '', '', '', '', '', '', 'পুত্র', 'পুত্র', 'স্ত্রী', '', '', '', '', '', '', '', '', '', '', '', ''),
 (9, '6', 'মৃত মতিয়ার রহমান', 'মৃত আহম্মদ মন্ডল', 'মৃত রহিদ কুমারি', '', '৬২ নং আড়িয়া', '2', '', '', '', '', '', 'মোঃ ছলিম মন্ডল', 'মোঃ শহিদুল ইসলাম', 'মোঃ মহিদুল ইসলাম', 'মোঃ রফিকুল ইসলাম', 'মোছাঃ ছকিনা বেগম', 'মোছাঃ ছপুরা বেগম', 'মোছাঃ ছাকেনা খাতুন', 'মোছাঃ রহিমা বেগম', 'মৃত জহুরা বেগম', '', '', '', '', '', '', 'পুত্র', 'পুত্র', 'পুত্র', 'পুত্র', 'কন্যা', 'কন্যা', 'কন্যা', 'কন্যা', 'স্ত্রী', '', '', '', '', '', ''),
@@ -7233,10 +7286,17 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `video`
+--
+ALTER TABLE `video`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `vwb`
 --
 ALTER TABLE `vwb`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `slno` (`slno`);
 
 --
 -- Indexes for table `wares`
@@ -7253,7 +7313,7 @@ ALTER TABLE `wares`
 -- AUTO_INCREMENT for table `bidhobavata`
 --
 ALTER TABLE `bidhobavata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `boyoskovata`
@@ -7265,7 +7325,7 @@ ALTER TABLE `boyoskovata`
 -- AUTO_INCREMENT for table `gram`
 --
 ALTER TABLE `gram`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `khobor`
@@ -7277,31 +7337,31 @@ ALTER TABLE `khobor`
 -- AUTO_INCREMENT for table `kormokortaborgo`
 --
 ALTER TABLE `kormokortaborgo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=230;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
 
 --
 -- AUTO_INCREMENT for table `masisuvata`
 --
 ALTER TABLE `masisuvata`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `mouja`
 --
 ALTER TABLE `mouja`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `nagorik`
 --
 ALTER TABLE `nagorik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=400;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=401;
 
 --
 -- AUTO_INCREMENT for table `notice`
@@ -7355,13 +7415,13 @@ ALTER TABLE `subuser`
 -- AUTO_INCREMENT for table `tadeentry`
 --
 ALTER TABLE `tadeentry`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2382;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2383;
 
 --
 -- AUTO_INCREMENT for table `taxentry`
 --
 ALTER TABLE `taxentry`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5259;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5260;
 
 --
 -- AUTO_INCREMENT for table `uniondetails`
@@ -7379,7 +7439,7 @@ ALTER TABLE `unionporiciti`
 -- AUTO_INCREMENT for table `upprotisthan`
 --
 ALTER TABLE `upprotisthan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -7388,10 +7448,16 @@ ALTER TABLE `user`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `video`
+--
+ALTER TABLE `video`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `vwb`
 --
 ALTER TABLE `vwb`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `wares`
