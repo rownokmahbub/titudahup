@@ -14,3 +14,5 @@ include '../../dbconnect.php';
             header("location:homeedit.php");
         }
     }
+    ob_end_flush();
+    ?>

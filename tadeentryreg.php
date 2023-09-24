@@ -45,4 +45,5 @@ session_start();
    // Close conection
    mysqli_close($con);
  }
-ob_end_flush();
+ ob_end_flush();
+ ?>

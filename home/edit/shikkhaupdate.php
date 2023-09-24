@@ -1,4 +1,10 @@
 <?php
+ob_start();
+
+// code 
+
+
+session_start();
 include '../../dbconnect.php';
 
   
@@ -21,3 +27,5 @@ include '../../dbconnect.php';
             header("location:homeedit.php");
         }
     }
+    ob_end_flush();
+    ?>

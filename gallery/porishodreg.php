@@ -1,5 +1,11 @@
 
 <?php
+ob_start();
+
+// code 
+
+
+session_start();
 if (isset($_POST['submit'])) {
     include '../dbconnect.php';
     $borgotype = $_POST['borgotype'];
@@ -26,5 +32,5 @@ if (isset($_POST['submit'])) {
 }
 
 
-
+ob_end_flush();
 ?>

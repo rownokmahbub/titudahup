@@ -17,4 +17,5 @@ include './dbconnect.php';
         if($query){
             header("location:./nagoriktable.php");
         }
-     ob_end_flush();
+        ob_end_flush();
+        ?>

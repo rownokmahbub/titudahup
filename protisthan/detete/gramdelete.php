@@ -1,4 +1,10 @@
 <?php
+ob_start();
+
+// code 
+
+
+session_start();
 include '../../dbconnect.php';
 
 
@@ -11,3 +17,5 @@ $query=mysqli_query($con,$delete);
 if($query){
     header("location:../edit/pedit.php");
 }
+ob_end_flush();
+?>

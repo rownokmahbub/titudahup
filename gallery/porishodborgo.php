@@ -1,4 +1,10 @@
 <?php
+ob_start();
+
+// code 
+
+
+session_start();
 error_reporting(0);
 include '../dbconnect.php';
 $msg = "";
@@ -28,3 +34,5 @@ if (isset($_POST['upload'])) {
 		echo "<h3> Failed to upload image!</h3>";
 	}
 }
+ob_end_flush();
+?>

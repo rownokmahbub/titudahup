@@ -11,3 +11,5 @@ include '../../dbconnect.php';
         if($query){
             header("location:../edit/porishodtable.php");
         }
+        ob_end_flush();
+        ?>

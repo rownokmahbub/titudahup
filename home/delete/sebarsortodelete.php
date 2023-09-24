@@ -1,4 +1,10 @@
 <?php
+ob_start();
+
+// code 
+
+
+session_start();
 include '../../dbconnect.php';
 
   
@@ -11,3 +17,5 @@ include '../../dbconnect.php';
         if($query){
             header("location:../edit/homeedit.php");
         }
+        ob_end_flush();
+        ?>
