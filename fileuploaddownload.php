@@ -115,6 +115,8 @@ if (isset($_POST["import"])) {
                         ভাতা
                         এন্ট্রি
                     </option>
+                    <option value="csv_files/vwb.csv" class="px-2 py-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 border border-gray-300 rounded-xl w-full">ভিডব্লিউবি এন্ট্রি
+                    </option>
 
                 </select>
                 <a onclick="downloadFile()" class="text-center cursor-pointer font-semibold flex gap-3 items-center px-4 py-2.5 rounded-xl shadow-lg bg-cyan-600 text-white hover:bg-cyan-700">
@@ -154,6 +156,8 @@ if (isset($_POST["import"])) {
                             ভাতা
                             এন্ট্রি
                         </option>
+                        <option value="vwb" class="px-2 py-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 border border-gray-300 rounded-xl w-full">ভিডব্লিউবি এন্ট্রি
+                    </option>
                     </select>
                     <input class='px-2 py-2 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 z-40 border border-gray-300 rounded-xl focus:outline-blue-400 w-full md:w-96' name="file" type="file" id="file" required>
                     <button name="import" type="submit" class="text-center font-semibold flex gap-3 items-center px-4 py-2.5 rounded-xl shadow-lg bg-green-600 text-white hover:bg-green-700">
