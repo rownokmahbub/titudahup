@@ -55,7 +55,7 @@ if (isset($_REQUEST['id'])) {
 
 
 <div class="flex flex-col justify-center items-center">
-      <p class='text-3xl font-semibold'>মাখালডাঙ্গা ইউপি</p>
+      <p class='text-3xl font-semibold'>তিতুদহ ইউপি</p>
       <p class='text-xl font-medium my-1'>চুয়াডাঙ্গা সদর, চুয়াডাঙ্গা</p>
       <p class='text-xl font-medium mb-5'>চেয়ারম্যান ও সদস্যের তালিকা </p>
 
