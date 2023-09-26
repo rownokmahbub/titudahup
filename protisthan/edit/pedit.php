@@ -370,6 +370,149 @@ if ($email == null) {
         </table>
 
     </div>
+    <p class="text-center font-semibold text-2xl md:text-3xl mt-5"> সদস্য তালিকা এডিট করুণ </p>
+    <div class="container mt-5">
+        <table id="example" class="display rounded-md overflow-hidden" style="width:100%">
+            <thead>
+                <tr class="bg-sky-900 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0 text-white">
+                    <th>ক্রমিক নং </th>
+                    <th>নাম</th>
+                    <th>পদবি</th>
+                    <th>শিক্ষাগত যোগ্যতা</th>
+                    <th>জন্ম তারিখ </th>
+                    <th>মোবাইল নং</th>
+                    <th>ওয়ার্ড নং</th>
+                    <th>ভোটার আইডি </th>
+                    <th>অ্যাকশন</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php
+                include '../../dbconnect.php';
+                $query = "SELECT * FROM `sodosshotalika`";
+                $poriciti = mysqli_query($con, $query);
+
+                while ($row = mysqli_fetch_assoc($poriciti)) {
+                    $id = $row['id'];
+                ?>
+                    <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['slno'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['name'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['podobi'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['joggota'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['birthdate'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['mobileno'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['word'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['voterid'] ?></td>
+
+
+                        <td class="border-grey-light border  p-3  cursor-pointer flex  gap-3 items-center">
+                            <a class="flex items-center text-teal-900 hover:font-medium" href="sodossoedit.php?id=<?php echo $id; ?>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#115e59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                                    <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+                                </svg>
+                                Edit
+                            </a>
+                            <a class="flex items-center text-teal-900 hover:font-medium" href="../detete/sodossodelete.php?id=<?php echo $id; ?>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#991b1b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                                </svg>
+                                Delete
+                            </a>
+                        </td>
+
+
+
+
+
+                    </tr>
+                <?php
+                }
+
+
+                ?>
+            </tbody>
+        </table>
+
+    </div>
+    <p class="text-center font-semibold text-2xl md:text-3xl mt-5"> কর্মচারী
+                                        তালিকা এডিট করুণ </p>
+    <div class="container mt-5">
+        <table id="example" class="display rounded-md overflow-hidden" style="width:100%">
+            <thead>
+                <tr class="bg-sky-900 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0 text-white">
+                    <th>ক্রমিক নং </th>
+                    <th>নাম</th>
+                    <th>পদবি</th>
+                    <th>শিক্ষাগত যোগ্যতা</th>
+                    <th>জন্ম তারিখ </th>
+                    <th>মোবাইল নং</th>
+                    <th>ওয়ার্ড নং</th>
+                    <th>ভোটার আইডি </th>
+                    <th>অ্যাকশন</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php
+                include '../../dbconnect.php';
+                $query = "SELECT * FROM `kormocharitalika`";
+                $poriciti = mysqli_query($con, $query);
+
+                while ($row = mysqli_fetch_assoc($poriciti)) {
+                    $id = $row['id'];
+                ?>
+                    <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['slno'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['name'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['podobi'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['joggota'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['birthdate'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['mobileno'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['word'] ?></td>
+                        <td class='border-grey-light border  p-3  cursor-pointer'><?= $row['voterid'] ?></td>
+
+
+                        <td class="border-grey-light border  p-3  cursor-pointer flex  gap-3 items-center">
+                            <a class="flex items-center text-teal-900 hover:font-medium" href="kormochariedit.php?id=<?php echo $id; ?>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#115e59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                                    <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+                                </svg>
+                                Edit
+                            </a>
+                            <a class="flex items-center text-teal-900 hover:font-medium" href="../detete/kormocharidelete.php?id=<?php echo $id; ?>">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#991b1b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="3 6 5 6 21 6"></polyline>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                                </svg>
+                                Delete
+                            </a>
+                        </td>
+
+
+
+
+
+                    </tr>
+                <?php
+                }
+
+
+                ?>
+            </tbody>
+        </table>
+
+    </div>
 
   
 </body>
