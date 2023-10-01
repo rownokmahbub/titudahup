@@ -9,7 +9,7 @@ error_reporting(0);
 include '../dbconnect.php';
 $msg = "";
 
-// If upload button is clicked ...
+
 if (isset($_POST['upload'])) {
 	$slno= $_POST['slno'];
 	$name= $_POST['name'];

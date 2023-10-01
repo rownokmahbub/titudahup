@@ -24,14 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    $sql = "INSERT INTO `sodosshotalika`( `slno`, `name`, `podobi`, `joggota`, `birthdate`, `mobileno`, `word`, `voterid`)  VALUES ('$slno','$name','$podobi','$joggota','$birthdate','$mobileno','$word','$voterid')";
-    echo $sql;
-
+    $sql = "INSERT INTO `sodosshotalika`( `slno`, `name`, `podobi`, `joggota`, `birthdate`, `mobileno`, `word`, `voterid`) VALUES ('$slno','$name','$podobi','$joggota','$birthdate','$mobileno','$word','$voterid')";
+   
 
     if (mysqli_query($con, $sql)) {
 
+        echo $sql;
 
-        header("Location:phome.php");
+        header("Location: phome.php");
     } else {
         echo "ERROR: Hush! Sorry $sql. "
             . mysqli_error($con);
